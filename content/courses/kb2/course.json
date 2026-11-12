@@ -1,0 +1,12 @@
+{
+  "id": "kb2",
+  "order": 8,
+  "color": "#84cc16",
+  "mark": "KB2",
+  "title": "知识库 2.0 宣发培训",
+  "subtitle": "1 课时 · AI 知识库 · Agentic RAG",
+  "description": "知识库 2.0 重大升级——多源接入、一站式沉淀、Agentic RAG 联查业务与知识，赋能群聊、会谈、报价、客服、工单。",
+  "version": "v1.0",
+  "updated": "2026-11-11",
+  "tags": ["知识库", "Agentic RAG", "知识管理"]
+}

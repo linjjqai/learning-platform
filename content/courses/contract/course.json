@@ -1,0 +1,12 @@
+{
+  "id": "contract",
+  "order": 5,
+  "color": "#ef4444",
+  "mark": "CON",
+  "title": "合同 Agent 宣发培训",
+  "subtitle": "1 课时 · Agent · 合同风险管理",
+  "description": "合同 Agent 能力全景——合同风险管理智能化，帮助团队把合规检查和风险预警自动化。",
+  "version": "v1.0",
+  "updated": "2026-11-11",
+  "tags": ["合同Agent", "风险管理", "合规"]
+}

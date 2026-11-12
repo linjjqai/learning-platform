@@ -1,0 +1,21 @@
+{
+  "passScore": 60,
+  "lessons": {
+    "L01": [
+      { "q": "ADCN 平台的完整英文名称是什么？", "options": ["AI Delivery Collaborative Network", "AI Data Connection Node", "Agent Development Center", "Automatic Delivery Channel"], "answer": 0, "explain": "ADCN 全称是 AI Delivery Collaborative Network，AI 交付协同服务平台。" },
+      { "q": "ADCN 平台中 APL 的含义是？", "options": ["Advanced Programming Language", "ADCN Platform Language", "Application Protocol Layer", "Agent Prompt Library"], "answer": 1, "explain": "APL 是 ADCN Platform Language，ADCN 平台上的可编排函数语言。" },
+      { "q": "本课的 APL 函数内容主要来自哪里？", "options": ["理论推导", "战区真实项目案例", "AI 自动生成", "竞品对标"], "answer": 1, "explain": "课程基于战区真实项目案例场景切入，做 APL 函数的实操分享。" },
+      { "q": "交付协同的核心目的是？", "options": ["提高销售业绩", "让交付团队内部及跨团队协作更高效", "降低服务器成本", "简化产品界面"], "answer": 1, "explain": "交付协同是交付团队内部及跨团队的协作流程与资源共享机制。" }
+    ]
+  },
+  "final": {
+    "title": "ADCN 平台 APL 函数 · 结业总测",
+    "questions": [
+      { "q": "ADCN 平台的定位是？", "options": ["CRM 管理平台", "AI 交付协同服务平台", "客户数据存储平台", "在线文档平台"], "answer": 1, "explain": "ADCN 是 AI Delivery Collaborative Network，AI 交付协同服务平台，已稳定运行。" },
+      { "q": "本课分享 APL 函数能力的目标受众是？", "options": ["销售团队", "一线同事（交付/技术）", "客户管理层", "产品经理"], "answer": 1, "explain": "课程面向一线同事，目标是让他们看得见价值、学得会方法。" },
+      { "q": "APL 函数创建后第一步应该做什么？", "options": ["直接上线生产环境", "在测试环境充分验证", "归档入库", "通知客户"], "answer": 1, "explain": "APL 函数创建后必须在测试环境充分验证，避免直接上线影响生产数据。" },
+      { "q": "复杂 APL 函数的最佳实践是？", "options": ["写成单个超长函数", "拆成多个小函数组合调用", "用全局变量存储状态", "跳过注释直接上线"], "answer": 1, "explain": "复杂场景应拆成多个小函数组合调用，便于维护和调试。" },
+      { "q": "ADCN 平台已跑出的可复制实践主要集中在哪些能力上？", "options": ["权限管理", "APL 函数能力", "报表生成", "审批流"], "answer": 1, "explain": "各战区在真实项目中持续跑出可复制的 APL 函数提效实践。" }
+    ]
+  }
+}
