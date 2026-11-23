@@ -8,5 +8,8 @@
   "description": "从项目启动到上线验收的全套工具与文档——必了解、需知悉分层，建立持续反馈与优化机制。",
   "version": "v1.0",
   "updated": "2026-11-11",
-  "tags": ["项目管理", "交付工具", "文档体系"]
+  "tags": ["项目管理", "交付工具", "文档体系"],
+  "platformId": 184765,
+  "platformTrainType": 1,
+  "platformUpstreamEa": "fs"
 }

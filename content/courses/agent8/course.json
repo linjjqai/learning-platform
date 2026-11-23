@@ -8,5 +8,8 @@
   "description": "ShareAgent 2608 月发版功能全景——Agent 应用场景、Flow、数据丰富、审批洞察 Agent。",
   "version": "v1.0",
   "updated": "2026-11-11",
-  "tags": ["ShareAgent", "产品上新", "Agent平台"]
+  "tags": ["ShareAgent", "产品上新", "Agent平台"],
+  "platformId": 183989,
+  "platformTrainType": 1,
+  "platformUpstreamEa": "fs"
 }

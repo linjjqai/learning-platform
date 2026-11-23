@@ -199,6 +199,7 @@ async function loadLessons(dir) {
       fullTitle: data.fullTitle || data.title || '',
       duration: data.duration || '',
       video: data.video || '',
+      videoExternal: data.videoExternal || '',
       pdf: data.pdf || [],
       tags: data.tags || [],
       sections: [],
@@ -430,14 +431,47 @@ function renderSection(sec, ctx) {
 }
 
 function videoBlock(lesson) {
-  if (!lesson.video) return '';
-  const isFile = /\.(mp4|webm|m3u8|mov)(\?|$)/i.test(lesson.video);
-  const inner = isFile
-    ? `<video src="${esc(lesson.video)}" controls preload="metadata" playsinline></video>`
-    : `<iframe src="${esc(lesson.video)}" allowfullscreen loading="lazy" referrerpolicy="no-referrer"></iframe>`;
-  return `<section class="card card--video" id="video">
-  <h2 class="card__title"><span class="card__dot"></span>课程视频 <span class="muted">时间轴与截图上的时间点可直接跳转</span></h2>
-  <div class="videowrap">${inner}</div>
+  const hasVideo = !!lesson.video;
+  const hasExternal = !!lesson.videoExternal;
+  if (!hasVideo && !hasExternal) return '';
+
+  // 确定视频类型
+  let videoType = 'none'; // direct | iframe | external-only
+  let videoSrc = '';
+  if (hasVideo) {
+    const isDirect = /\.(mp4|webm|m3u8|mov)(\?|$)/i.test(lesson.video);
+    videoType = isDirect ? 'direct' : 'iframe';
+    videoSrc = lesson.video;
+  }
+
+  // 生成播放区域
+  let playerHtml = '';
+  let titleHint = '';
+  let videoUrl = ''; // "在新窗口打开" 的 URL
+
+  if (videoType === 'direct') {
+    playerHtml = `<video src="${esc(videoSrc)}" controls preload="metadata" playsinline></video>`;
+    titleHint = '<span class="muted">⏱ 时间轴上的时间点可直接跳转视频对应位置</span>';
+    videoUrl = videoSrc;
+  } else if (videoType === 'iframe') {
+    playerHtml = `<iframe src="${esc(videoSrc)}" allow="fullscreen autoplay" allowfullscreen loading="lazy" referrerpolicy="no-referrer"></iframe>`;
+    titleHint = '<span class="muted">视频嵌入课程平台播放 · 时间轴点击见下方说明</span>';
+    videoUrl = videoSrc;
+  }
+
+  // 底部提示按钮（iframe/external 模式下显示）
+  const externalBtn = (videoType === 'iframe' || hasExternal)
+    ? `<div class="video__bar">
+      ${playerHtml ? `<span class="video__tip">🔗 嵌入播放无法精确跳转时间点，点击按钮在新窗口打开视频后，回到本页对照"关键节点时间轴"上的时间点</span>` : ''}
+      ${hasExternal ? `<a class="btn btn--ghost" href="${esc(lesson.videoExternal)}" target="_blank" rel="noopener">📺 在新窗口打开视频</a>` : ''}
+      ${videoType === 'iframe' ? `<a class="btn btn--ghost" href="${esc(videoSrc)}" target="_blank" rel="noopener">↗ 放大视频（新窗口）</a>` : ''}
+    </div>`
+    : '';
+
+  return `<section class="card card--video" id="video" ${videoType === 'iframe' ? 'data-video-type="iframe"' : ''}>
+  <h2 class="card__title"><span class="card__dot"></span>课程视频 ${titleHint}</h2>
+  ${playerHtml ? `<div class="videowrap videowrap--${videoType}">${playerHtml}</div>` : ''}
+  ${externalBtn}
 </section>`;
 }
 
@@ -833,6 +867,26 @@ for (const [ci, id] of courseIds.entries()) {
   const catalogPath = path.join(dir, 'catalog.json');
   const catalog = existsSync(catalogPath) ? JSON.parse(await fs.readFile(catalogPath, 'utf8')) : { days: [], pdfs: [] };
   const lessons = await loadLessons(path.join(dir, 'lessons'));
+
+  // 自动补 videoExternal：catalog.json 里 lessons[].lessonId + course.json platform 配置
+  if (catalog.lessons?.length && (meta.platformId || meta.platformCourseId)) {
+    const platId = meta.platformId || meta.platformCourseId;
+    const trainType = meta.platformTrainType ?? 1;
+    const upstreamEa = meta.platformUpstreamEa || 'fs';
+    const baseURL = `https://www.fxiaoke.com/XV/UI/Home?noheader=1&ddtab=true#app/train/learn/=/id-${platId}/trainType-${trainType}/lessonId-{lessonId}/upstreamEa-${upstreamEa}`;
+
+    // 建立 catalog lessonId 映射（按 order 或 id）
+    const catalogByOrder = {};
+    catalog.lessons.forEach((cl) => { if (cl.order) catalogByOrder[cl.order] = cl; });
+
+    for (const lesson of lessons) {
+      if (!lesson.videoExternal && !lesson.video) {
+        const catEntry = catalogByOrder[lesson.order] || catalog.lessons.find((cl) => cl.id === lesson.id);
+        const lid = catEntry?.lessonId;
+        if (lid) lesson.videoExternal = baseURL.replace('{lessonId}', lid);
+      }
+    }
+  }
 
   // 结业测验题库（可选）：有就用精编题，没有就退回术语自动出题
   const examPath = path.join(dir, 'exam.json');

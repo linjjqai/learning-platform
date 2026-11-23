@@ -8,5 +8,8 @@
   "description": "服务云标准版与旗舰版产品能力全景——客户画像、定价策略、核心业务流程演示。",
   "version": "v1.0",
   "updated": "2026-11-11",
-  "tags": ["服务云", "产品宣讲", "销售售前"]
+  "tags": ["服务云", "产品宣讲", "销售售前"],
+  "platformId": 185083,
+  "platformTrainType": 1,
+  "platformUpstreamEa": "fs"
 }

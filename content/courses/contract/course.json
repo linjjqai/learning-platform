@@ -8,5 +8,8 @@
   "description": "合同 Agent 能力全景——合同风险管理智能化，帮助团队把合规检查和风险预警自动化。",
   "version": "v1.0",
   "updated": "2026-11-11",
-  "tags": ["合同Agent", "风险管理", "合规"]
+  "tags": ["合同Agent", "风险管理", "合规"],
+  "platformId": 184794,
+  "platformTrainType": 1,
+  "platformUpstreamEa": "fs"
 }

@@ -9,5 +9,8 @@
   "version": "v1.0",
   "updated": "2026-11-09",
   "tags": ["产品入门", "实施交付", "新人必修"],
-  "videoHint": "本课程暂未接入视频源；接入后，时间轴与截图上的时间点可直接跳转到视频对应位置。"
+  "videoHint": "本课程暂未接入视频源；接入后，时间轴与截图上的时间点可直接跳转到视频对应位置。",
+  "platformId": 176106,
+  "platformTrainType": 1,
+  "platformUpstreamEa": "fs"
 }

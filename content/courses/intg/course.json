@@ -8,5 +8,8 @@
   "description": "连接对象自动生成、集成流自动创建、集成报错自动排查——Skill 驱动让配置速度和问题解决效率提上来。",
   "version": "v1.0",
   "updated": "2026-11-11",
-  "tags": ["集成平台", "Skill", "实施交付"]
+  "tags": ["集成平台", "Skill", "实施交付"],
+  "platformId": 185546,
+  "platformTrainType": 1,
+  "platformUpstreamEa": "fs"
 }

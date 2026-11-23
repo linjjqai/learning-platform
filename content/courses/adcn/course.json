@@ -8,5 +8,8 @@
   "description": "ADCN 平台真实项目案例——APL 函数的创建与修改智能化能力，看得见价值、学得会方法。",
   "version": "v1.0",
   "updated": "2026-11-11",
-  "tags": ["ADCN", "APL函数", "AI交付"]
+  "tags": ["ADCN", "APL函数", "AI交付"],
+  "platformId": 185230,
+  "platformTrainType": 1,
+  "platformUpstreamEa": "fs"
 }
