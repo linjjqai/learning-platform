@@ -1,0 +1,24 @@
+{
+  "lessons": [
+    {
+      "id": "L01",
+      "order": 1,
+      "day": 1,
+      "title": "compressO-AI运营中心-服务云产品能力宣讲",
+      "fullTitle": "课时 compressO-AI运营中心-服务云产品能力宣讲",
+      "duration": "0:00",
+      "lessonId": 358045,
+      "tags": []
+    }
+  ],
+  "days": [
+    {
+      "order": 1,
+      "title": "全部课时",
+      "range": [
+        1,
+        1
+      ]
+    }
+  ]
+}

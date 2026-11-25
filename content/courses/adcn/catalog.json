@@ -1,0 +1,24 @@
+{
+  "lessons": [
+    {
+      "id": "L01",
+      "order": 1,
+      "day": 1,
+      "title": "ADCN平台APL函数应用案例专项赋能培训",
+      "fullTitle": "课时 ADCN平台APL函数应用案例专项赋能培训",
+      "duration": "0:00",
+      "lessonId": 358385,
+      "tags": []
+    }
+  ],
+  "days": [
+    {
+      "order": 1,
+      "title": "全部课时",
+      "range": [
+        1,
+        1
+      ]
+    }
+  ]
+}

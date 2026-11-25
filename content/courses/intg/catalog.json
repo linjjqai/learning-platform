@@ -1,0 +1,24 @@
+{
+  "lessons": [
+    {
+      "id": "L01",
+      "order": 1,
+      "day": 1,
+      "title": "集成平台 1.0 自研系统集成 Skill 实战分享",
+      "fullTitle": "课时 集成平台 1.0 自研系统集成 Skill 实战分享",
+      "duration": "0:00",
+      "lessonId": 359184,
+      "tags": []
+    }
+  ],
+  "days": [
+    {
+      "order": 1,
+      "title": "全部课时",
+      "range": [
+        1,
+        1
+      ]
+    }
+  ]
+}

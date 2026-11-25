@@ -1,0 +1,24 @@
+{
+  "lessons": [
+    {
+      "id": "L01",
+      "order": 1,
+      "day": 1,
+      "title": "合同Agent对内宣发培训",
+      "fullTitle": "课时 合同Agent对内宣发培训",
+      "duration": "0:00",
+      "lessonId": 357589,
+      "tags": []
+    }
+  ],
+  "days": [
+    {
+      "order": 1,
+      "title": "全部课时",
+      "range": [
+        1,
+        1
+      ]
+    }
+  ]
+}
